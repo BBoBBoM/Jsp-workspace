@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.io.FileOutputStream" %>
+<%@ page import="java.nio.charset.StandardCharsets" %>
+<%@ page import="java.nio.file.Files" %>
+<%@ page import="java.nio.file.Paths" %>
+
+<%
+    request.setCharacterEncoding("UTF-8");
+    String text = request.getParameter("filecontent_textarea"); // 클라이언트로부터 전송된 텍스트를 가져옵니다.
+    String user_id = (String) session.getAttribute("sessionId");
+    String filePath = getServletContext().getRealPath("introduce/"+user_id + ".txt"); // 저장할 텍스트 파일의 경로와 파일명을 지정합니다.
+    
+    try {
+        // 텍스트 파일에 내용 저장
+        Files.write(Paths.get(filePath), text.getBytes(StandardCharsets.UTF_8));
+        
+        // 업데이트 성공 알림 출력
+        %>
+        <script type="text/javascript">
+            alert("개인정보가 업데이트 되었습니다. 새로운 내용이 업로드 되었어요.");
+        </script>
+        <% 
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    
+    // 프로필 페이지로 리다이렉트
+
+%>
+<%=text%>

@@ -1,0 +1,43 @@
+login 
+로그인 페이지 
+회원가입 페이지 
+같은곳에 만들기 
+form action 넘기면 request 
+button 
+onclick = "location.href='***.jsp'"
+
+Member selectone
+Member member = new member();
+
+finally{try{if(pstmt !=null) pstmt.close();
+if(rs !=null){rs.close();}catch(SQLException e){e.prontstackTrace();}}return list;}
+
+
+로그인 요청이 들어오면 체크하는 페이지 필요 
+체크 확인시 로그인 성공 로그인 실패 페이지로 이동 
+
+html hea
+
+
+	member me = MemberDao.getInstance().logincheck(id);
+	
+	String userid = me.getId();
+	String passw = me.getPwd();
+	String name = me.getName();
+
+<jsp:forward page = ""/>
+	#<%= session.getAttribute("login") %>님 환영합니다.!!!
+<jsp:include page = "<%=url%>"/>
+
+
+List<Member>selectAll()
+List<Member> list = new ArrayList<Member>();
+member member = new member();
+list.add(member);
+
+request.setcharacterEncoding 
+List<Member> list =MemberDao.getInstans().selectAll;
+
+for 
+update * set name=? where id=?
+1이면 성공 2이면 실패 

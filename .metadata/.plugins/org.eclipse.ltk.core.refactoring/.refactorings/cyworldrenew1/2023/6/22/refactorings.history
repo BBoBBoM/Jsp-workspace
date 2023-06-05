@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;cyworldrenew1/src/main/webapp/music/꿈에-박정현.mp3&apos; to &apos;꿈에.mp3&apos;" description="Rename resource &apos;꿈에-박정현.mp3&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/music/꿈에-박정현.mp3" name="꿈에.mp3" stamp="1685603657288" updateReferences="true"/>
+</session>

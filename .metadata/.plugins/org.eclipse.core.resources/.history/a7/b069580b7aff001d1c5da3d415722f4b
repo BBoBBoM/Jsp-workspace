@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%
+    request.setCharacterEncoding("UTF-8");
+    
+    String text = request.getParameter("text"); // 클라이언트로부터 전송된 텍스트를 가져옵니다.
+    
+    // 업데이트 작업을 수행합니다.
+    // 예시: 텍스트를 파일에 저장하는 작업
+    String filePath = "introduceText/<%=user_id%>.txt"; // 업데이트할 텍스트 파일의 경로와 파일명을 지정합니다.
+    try {
+        FileWriter fileWriter = new FileWriter(filePath);
+        fileWriter.write(text);
+        fileWriter.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+%>

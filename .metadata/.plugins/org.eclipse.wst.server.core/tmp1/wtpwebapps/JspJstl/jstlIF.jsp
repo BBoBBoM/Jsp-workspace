@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+   <%@taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>최대값구하기</title>
+</head>
+<body>
+	최대값 : 
+	<c:if test = "${param.NUM1-param.NUM2>=0 }">
+	${param.NUM1}
+	</c:if>
+	<c:if test ="${param.NUM1-param.NUM2<0 }">
+	${param.NUM2 }
+	</c:if>
+</body>
+</html>
+<!-- http://localhost:9010/JspJstl/jstlIF.jsp?NUM1=89&NUM2=57 -->

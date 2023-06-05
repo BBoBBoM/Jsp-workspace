@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+    // 파일 이름 가져오기
+    String fileName = request.getParameter("fileinput");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload Result</title>
+</head>
+<body>
+    <h1>File Upload Result</h1>
+    <p>Uploaded file name: <%= fileName %></p>
+    <!-- 이후로 추가적인 로직 또는 표시할 내용을 작성 -->
+</body>
+</html>

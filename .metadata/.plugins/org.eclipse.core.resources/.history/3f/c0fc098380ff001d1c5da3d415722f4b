@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+
+
+<%@ page import="java.util.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+<%@ include file="dbconn.jsp"%>
+<%@page import="java.io.PrintWriter"%>
+
+
+
+<%
+    request.setCharacterEncoding("UTF-8");
+    String text = request.getParameter("filecontent_textarea"); // 클라이언트로부터 전송된 텍스트를 가져옵니다.
+    String user_id = (String)session.getAttribute("sessionId");
+    String filePath = getServletContext().getRealPath("introduceText") + "/" + user_id + ".txt"; // 저장할 텍스트 파일의 경로와 파일명을 지정합니다.
+    FileWriter fileWriter;
+    try {
+        fileWriter = new FileWriter(filePath);
+        fileWriter.write(text);
+        fileWriter.close();
+        
+        // 파일 저장 성공 시, 필요한 추가 작업을 수행할 수 있습니다.
+        // 예: 데이터베이스에 파일 경로 등을 저장하는 등의 처리
+        
+        // 저장 완료 후, 다른 페이지로 이동하거나 메시지를 표시할 수 있습니다.
+        response.sendRedirect("다른페이지.jsp");
+    } catch (IOException e) {
+        e.printStackTrace();
+        
+        // 저장 실패 시, 오류 메시지를 표시하거나 다른 처리를 수행할 수 있습니다.
+        // 예: 오류 페이지로 이동, 사용자에게 오류 메시지 표시 등
+    }
+%>

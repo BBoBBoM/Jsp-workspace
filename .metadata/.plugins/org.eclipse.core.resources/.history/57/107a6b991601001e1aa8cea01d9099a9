@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="login.css" rel="stylesheet" type="text/css" />
+<title>Document</title>
+
+</head>
+
+<body>
+	<div id="imgboxbox">
+		<div id="imgbox" class="imgbox">
+			<img 
+			 id="img1" class="imgslide" src="background/cyworld login.jpg"> <img
+				id="img2" class="imgslide" src="background/cyworld login1.jpg"> <img
+				id="img3" class="imgslide" src="background/cyworld login2.jpg">
+		</div>
+	</div>
+	
+
+	<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+	<script>
+		$(function() {
+			setInterval(function() {
+				$("#imgbox").animate({
+					left : "-100%"
+				}, 1500, function() {
+					let img = $("#imgbox> img").eq(0).detach()
+					$("#imgbox").css("left", "0px")
+					$("#imgbox").append(img)
+				})
+			}, 2000)
+		})
+	</script>
+
+
+</body>
+
+</html>

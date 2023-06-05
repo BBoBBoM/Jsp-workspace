@@ -1,0 +1,30 @@
+<%@page import="java.io.FileWriter"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+<%@ include file="dbconn.jsp"%>
+<%@page import="java.io.FileWriter"%>
+
+<%
+request.setCharacterEncoding("UTF-8");
+String text = request.getParameter("filecontent_textarea");
+String user_id = (String)session.getAttribute("sessionId");
+String filePath = "introduceText/" + user_id + ".txt";
+
+FileWriter writer = null;
+try {
+    writer = new FileWriter(filePath, "UTF-8");
+    writer.write(text);
+    writer.close();
+    %>
+    <script type="text/javascript">
+        alert("프로필 사진이 새롭게 업로드 되었어요");
+    </script>
+    <%
+} catch (Exception e) {
+    e.printStackTrace();
+}
+
+%>
+<%= filePath %>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="login1.css" rel="stylesheet" type="text/css" />
+<title>Document</title>
+<style>* {
+    padding: 0px;
+    margin: 0;
+	width:100%;
+	height:100%;
+    box-sizing: border-box;
+    list-style: none;
+    overflow:hidden;
+}
+
+#imgboxbox {
+    width: 100%;
+  height:100%;
+    position:relative;
+}
+
+#imgbox {
+    width: 300%;  height:100%;
+    display: flex;
+    position: absolute;
+
+}
+
+.imgslide {
+    width: 100%;  height:100%;
+  
+}
+
+#alldiv {
+    width: 100%;
+    height: 100%;
+}
+
+#subject_menudiv {
+    position: relative;
+    border: 1px solid green;
+
+}
+
+#header1 {
+    width: 100%;
+    height: 150px;
+    border: 1px solid salmon;
+    display: flex;
+}
+
+#cyworld_logo {
+    width: 150px;
+    height: 150px;
+    border: 1px solid red;
+    background: url(background/cyworldlogo.jpg) no-repeat center;
+    background-size: contain;
+}
+
+
+#imgboxbox {
+    width: 100%;
+  height:100%;
+    position:relative;
+}
+
+#imgbox {
+    width: 300%;  height:100%;
+    display: flex;
+    position: absolute;
+
+}
+
+.imgslide {
+    width: 100%;  height:100%;
+  
+}</style>
+</head>
+
+<body>
+
+	<div id="alldiv" >
+		<div id="imgboxbox" style="position: absolute;">
+			<div id="imgbox" class="imgbox">
+				<img 
+				 id="img1" class="imgslide" src="background/cyworld login.jpg"> <img
+					id="img2" class="imgslide" src="background/cyworld login1.jpg"> <img
+					id="img3" class="imgslide" src="background/cyworld login2.jpg">
+			</div>
+		</div>
+		<div id="subject_menudiv" >
+			<header id="header1">
+				<div id="cyworld_logo"></div>
+				<label>Cyworld</label>
+			</header>
+		
+		</div>
+		<div id="navmenudiv" >
+			<nav id="navi" >
+				<ul>메뉴1</ul>
+				<ul>메뉴2</ul>
+				<ul>메뉴3</ul>
+				<ul>메뉴4</ul>
+
+			</nav>
+		</div>
+
+
+	</div>
+
+	<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+	<script>
+		$(function() {
+			setInterval(function() {
+				$("#imgbox").animate({
+					left : "-100%"
+				}, 2000, function() {
+					let img = $("#imgbox> img").eq(0).detach()
+					$("#imgbox").css("left", "0px")
+					$("#imgbox").append(img)
+				})
+			}, 5000)
+		})
+	</script>
+
+
+</body>
+
+</html>

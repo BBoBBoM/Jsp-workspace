@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="login.css" rel="stylesheet" type="text/css" />
+<title>Document</title>
+
+</head>
+
+<body>
+	<div id="imgboxbox">
+		<div id="imgbox" class="imgbox" style="width:300%">
+			<img style="width:100%"
+			 id="img1" class="imgslide" src="background/cyworld login.jpg"> <img
+				id="img2" class="imgslide" src="background/cyworld login1.jpg"> <img
+				id="img3" class="imgslide" src="background/cyworld login2.jpg">
+		</div>
+	</div>
+	<div id="alldiv">
+
+		<div id="subject_menudiv">
+			<header id="header1">
+				<div id="cyworld_logo"></div>
+				<label>Cyworld</label>
+			</header>
+			<div id="menudiv1">
+				<nav id="menudiv_menu">
+					<ul>메뉴1
+					</ul>
+					<ul>메뉴2
+					</ul>
+					<ul>메뉴3
+					</ul>
+					<ul>메뉴4
+					</ul>
+				</nav>
+				<div id="menulistdiv">
+					<ul>
+						<li>서브1</li>
+						<li>서브2</li>
+						<li>서브3</li>
+						<li>서브4</li>
+						<li>서브5</li>
+					</ul>
+					<ul>
+						<li>서브1</li>
+						<li>서브2</li>
+						<li>서브3</li>
+						<li>서브4</li>
+						<li>서브5</li>
+					</ul>
+					<ul>
+						<li>서브1</li>
+						<li>서브2</li>
+						<li>서브3</li>
+						<li>서브4</li>
+						<li>서브5</li>
+					</ul>
+					<ul>
+						<li>서브1</li>
+						<li>서브2</li>
+						<li>서브3</li>
+						<li>서브4</li>
+						<li>서브5</li>
+					</ul>
+
+
+				</div>
+			</div>
+		</div>
+		<div id="logindiv">
+			<div id="logindiv1">
+				<div id="login_name" class="login">
+					<div></div>
+					CYWORLD
+				</div>
+				<form action="loginCheck.jsp" method="post">
+					<div id="login_id" class="login">
+						<input type="text" name="id">
+					</div>
+					<div id="login_pwd" class="login">
+						<input type="password" name="password">
+					</div>
+					<div id="login_button" class="login">
+						<input type="submit" value="로그인">
+					</div>
+				</form>
+				<div id="login_search" class="login">아이디/비밀번호 찾기</div>
+				<div id="login_join" class="login">
+					<a href="userjoin.html">회원가입</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+	<script>
+		$(function() {
+			setInterval(function() {
+				$(".imgslide").animate({
+					left : "-80%"
+				}, 1200, function() {
+					let img = $("#imgbox> img").eq(0).detach()
+					$("#imgslide").css("left", "0px")
+					$("#imgslide").append(img)
+				})
+			}, 2000)
+		})
+	</script>
+
+
+</body>
+
+</html>

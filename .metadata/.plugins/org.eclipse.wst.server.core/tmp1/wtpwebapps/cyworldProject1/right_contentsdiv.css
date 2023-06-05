@@ -1,0 +1,41 @@
+        *{list-style: none;
+        box-sizing: border-box;
+    border: 1px solid black;}
+        #right_contentsdiv {
+            width: 200px;
+            height: 730px;
+            border: 1px solid red;
+        }
+
+
+    #right_menu {
+            box-sizing: border-box;
+            width: 100px;
+            height: 320px;
+            border: 1px solid salmon;
+            margin-top: 237px;
+
+            
+        }
+        #right_menu >div{
+            padding: 5px;height: 40px;border-radius: 15px;}
+            #right_menu >div>a{margin-left: 5px;line-height: 30px;
+               }
+        #right_music {
+            position: absolute;
+            margin-left: 10px;
+            top: 60px;
+            width: 75%;
+            height: 17%;
+            border: 1px solid rebeccapurple;
+        }
+
+        #right_purchase_contents {
+            position: absolute;
+            bottom: 3%;
+            margin-left: 10px;
+      
+            width: 75%;
+            height: 17%;
+            border: 1px solid rebeccapurple;
+        }

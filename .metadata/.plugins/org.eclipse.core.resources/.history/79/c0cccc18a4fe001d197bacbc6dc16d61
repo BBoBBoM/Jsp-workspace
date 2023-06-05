@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<input type="file" id="fileinput" name="fileinput" style="display: none;">
+<script>
+    // 페이지가 로드되면 파일 선택 다이얼로그를 자동으로 열기
+    window.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('fileinput').click();
+    });
+</script>
+<c:redirect url="loginerror.jsp?error=1" />
+</body>
+</html>
